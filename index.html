@@ -64,36 +64,36 @@
 
 
         <div ng-show="!eventShow" class="well well-lg col-sm-12">
-            <form role="form" class="form-horizontal">
+            <form name="form" role="form" class="form-horizontal">
 
                 <div class="form-group">
                     <label for="startDate" class="col-sm-2 control-label">Start</label>
                     <div class="col-sm-8">
-                        <input id="startDate" placeholder="yyyy-dd-mm" type="date" ng-model="event.start.date" class="form-control" />
+                        <input required id="startDate" placeholder="yyyy-dd-mm" type="date" ng-model="event.start.date" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="endDate" class="col-sm-2 control-label">End</label>
                     <div class="col-sm-8">
-                        <input id="endDate" placeholder="yyyy-dd-mm" type="date" ng-model="event.end.date" class="form-control" />
+                        <input required id="endDate" placeholder="yyyy-dd-mm" type="date" ng-model="event.end.date" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="attendee" class="col-sm-2 control-label">Attendee</label>
                     <div class="col-sm-8">
-                        <input id="attendee" type="email" ng-model="event.attendees.email" class="form-control" />
+                        <input required id="attendee" type="email" ng-model="event.attendees.email" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="summary" class="col-sm-2 control-label">Summary</label>
                     <div class="col-sm-8">
-                        <input id="summary" type="text" ng-model="event.summary" class="form-control" />
+                        <input required id="summary" type="text" ng-model="event.summary" class="form-control" />
                     </div>
                 </div>
 
                 <div class="col-sm-offset-2 col-sm-8">
                     <button class="btn btn-danger control-btn" ng-click="reset()">RESET</button>
-                    <button class="btn btn-success control-btn" ng-click="insertFn(event)">SAVE</button>
+                    <button class="btn btn-success control-btn" ng-click="insertFn(event)" ng-disabled="form.$invalid">SAVE</button>
                 </div>
             </form>
         </div>
